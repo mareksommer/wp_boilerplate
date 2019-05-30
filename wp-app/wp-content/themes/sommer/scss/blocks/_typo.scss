@@ -1,0 +1,86 @@
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  @include transition;
+}
+
+.mobile .bootstrap-wrapper .container {
+  padding-right: 25px;
+  padding-left: 25px;
+}
+
+.hidden {
+  display: none;
+}
+.post,
+.page,
+.single {
+  margin: 0px;
+}
+
+a,
+a:visited {
+  @include transition;
+  color: $dark1;
+}
+ 
+p, ul {
+  font-size: 18px;
+  line-height: 140%;
+  color: $dark2;
+  letter-spacing: .01em;
+}
+h1,h2,h3,h4,h5,h6 {
+  color: $dark1;
+  font-weight: 700;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+.small {
+  font-size: 80%;
+}
+a {
+  color: $dark2;
+  @include transition;
+}
+a:hover {
+  color: $dark1;
+}
+
+.col-xs-5ths,
+.col-sm-5ths,
+.col-md-5ths,
+.col-lg-5ths {
+    position: relative;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.col-xs-5ths {
+    width: 20%;
+    float: left;
+}
+
+@media (min-width: 768px) {
+    .col-sm-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 992px) {
+    .col-md-5ths {
+        width: 20%;
+        float: left;
+    }
+}
+
+@media (min-width: 1200px) {
+    .col-lg-5ths {
+        width: 20%;
+        float: left;
+    }
+}

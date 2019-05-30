@@ -1,0 +1,25 @@
+.search-results  {
+    #content {
+        padding-top: 80px;
+
+        .entry-title {
+            margin-bottom: -10px; 
+            a {
+                text-decoration: none;
+            }
+        }
+        .post-thumbnail {
+            display: none;
+        }
+        .entry-summary {
+            display: inline-block;
+            vertical-align: text-top;
+            margin-top: 0px;
+            margin-left: 0px;
+        }
+
+        .comments-link {
+            display: none;
+        }
+    }
+} 

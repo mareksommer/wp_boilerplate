@@ -1,2 +1,4 @@
 /wp-data
 /config
+wp-app/wp-content/themes/sommer/node_modules
+wp-app/wp-content/themes/sommer/package-lock.json

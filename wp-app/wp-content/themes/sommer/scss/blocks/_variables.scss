@@ -1,0 +1,25 @@
+$dark1: rgb(25, 25, 25);
+$dark2: #3d3d3d;
+$white: #ffffff;
+$light: #F5F8F9;
+
+
+
+@mixin transition() {
+    transition: background-color 0.2s ease;
+    transition: color 0.2s ease;
+    transition: 0.2s ease;
+}
+@mixin transitionCustomTime($duration) {
+    transition: background-color $duration ease;
+    transition: color $duration ease;
+    transition: $duration ease;
+}
+
+@mixin flexbox() {
+    display: -webkit-box; 
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex; 
+    display: flex;
+}
