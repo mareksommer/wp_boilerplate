@@ -84,17 +84,6 @@ a:hover {
   width: 100%;
   background-color: rgba(255, 255, 255, 0.8);
   z-index: 10; }
-  .site-header .container {
-    max-width: 1280px !important; }
-  .site-header .site-branding {
-    display: inline-block;
-    max-width: 50%;
-    width: 200px !important; }
-    .site-header .site-branding img {
-      max-width: 100%;
-      height: auto; }
-  .site-header .navigation_wrapper {
-    text-align: center; }
   .site-header #site-navigation {
     position: relative; }
     .site-header #site-navigation li {
@@ -108,17 +97,6 @@ a:hover {
         color: #3d3d3d; }
       .site-header #site-navigation li a:hover, .site-header #site-navigation li .active {
         color: #191919; }
-  .site-header .menu-button {
-    background-color: transparent;
-    border: 0px;
-    font-size: 24px;
-    line-height: 30px;
-    height: 45px;
-    display: none; }
-    .site-header .menu-button svg {
-      width: 30px;
-      position: relative;
-      top: 5px; }
   .site-header .close-menu {
     position: absolute;
     z-index: 2;
@@ -127,10 +105,6 @@ a:hover {
     right: 0px; }
     .site-header .close-menu svg {
       width: 30px; }
-
-#content {
-  transition: margin-left .5s;
-  padding: 16px; }
 
 .mobile .site-header .menu-button, .tablet .site-header .menu-button {
   display: inline-block; }
@@ -149,7 +123,8 @@ a:hover {
   list-style-type: none;
   text-align: left;
   padding-left: 5px;
-  margin-top: 0px; }
+  margin-top: 0px;
+  display: block; }
   .mobile .site-header #primary-menu li, .tablet .site-header #primary-menu li {
     padding: 5px;
     display: block; }

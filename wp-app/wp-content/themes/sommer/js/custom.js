@@ -1,26 +1,28 @@
-jQuery( document ).ready(function() {
+(function($) {
+$( document ).ready(function() {
     carousels();
     menuScroll();
     boldMenuItemsOnScroll();
+    mobileMenu();
 });
 
 function carousels() {
     //carousel example
-    var carousel1 = new Glide('.glide_carousel', {
+    /*var carousel1 = new Glide('.glide_carousel', {
         type: 'carousel',
         perView: 1,
         autoplay: 3000,
         hoverpause: false,
         centered:true,
         paddings: 10,
-    }).mount()
+    }).mount()*/
 }
 
 function menuScroll() {
-    jQuery(".main-navigation a").click(function(e) {
+    $(".main-navigation a").click(function(e) {
         e.preventDefault();
 
-        var link = jQuery(this).attr('href');
+        var link = $(this).attr('href');
         if (!link.includes("#")) {
             window.location.href = link;
             return;
@@ -29,44 +31,61 @@ function menuScroll() {
         var start = link.indexOf("#") + 1;
         var anchor = link.substring(start);
 
-        jQuery([document.documentElement, document.body]).animate({
-            scrollTop: jQuery("#" + anchor).offset().top 
+        $([document.documentElement, document.body]).animate({
+            scrollTop: $("#" + anchor).offset().top 
         }, 800);
         closeNav()
         
     });
 }
+function mobileMenu() {
+    $('.toggle-menu').click(function() {
+        if ($(this).hasClass('open')) {
+            closeNav()
+        } 
+        else {
+            openNav()
+        }
+        
+        $(this).toggleClass('open');
+    })
 
+    $('.close-menu').click(function() {
+        closeNav();
+        $('.toggle-menu').removeClass('open');
+    })
+}
 function openNav() {
-    document.getElementById("primary-menu").style.right = "0px";
-    document.getElementById("close_main_menu").style.display = "inline-block";
+    $('#primary-menu').css('right', '0px');
+    $("#close_main_menu").css('display', 'block');
 }
 
 function closeNav() {
-    document.getElementById("primary-menu").style.right = "-320px";
-    document.getElementById("close_main_menu").style.display = "none";
+    $('#primary-menu').css('right', '-320px');
+    $("#close_main_menu").css('display', 'none');
 }
 
 function boldMenuItemsOnScroll() {
-    var sections = jQuery('.section')
-    var nav = jQuery('#site-navigation')
+    var sections = $('.section')
+    var nav = $('#site-navigation')
     var nav_height = nav.outerHeight();
  
-    jQuery(window).on('scroll', function () {
-        var cur_pos = jQuery(this).scrollTop();
+    $(window).on('scroll', function () {
+        var cur_pos = $(this).scrollTop();
 
         sections.each(function() {
-            var top = jQuery(this).offset().top - nav_height,
-                bottom = top + jQuery(this).outerHeight();
+            var top = $(this).offset().top - nav_height,
+                bottom = top + $(this).outerHeight();
         
             if (cur_pos >= top && cur_pos <= bottom) {
                 nav.find('a').removeClass('active');
                 sections.removeClass('active');
             
-                jQuery(this).addClass('active');
-                nav.find('a[href="/#'+jQuery(this).attr('id')+'"]').addClass('active');
+                $(this).addClass('active');
+                nav.find('a[href="/#'+$(this).attr('id')+'"]').addClass('active');
             }
         });
     });
 }
 
+})( jQuery );

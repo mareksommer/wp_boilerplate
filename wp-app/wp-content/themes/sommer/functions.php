@@ -129,6 +129,17 @@ function sommer_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	wp_enqueue_style( 'sommer-bootstrap-grid', get_template_directory_uri() . '/css/bootstrap-grid.min.css' );
+	wp_enqueue_style( 'sommer-glide-css', get_template_directory_uri() . '/css/glide.core.min.css' );
+	wp_enqueue_style( 'sommer-glide-theme', get_template_directory_uri() . '/css/glide.theme.min.css' );
+	wp_enqueue_script( 'sommer-glide-js', get_template_directory_uri() . '/js/glide.min.js', array(), '20151215', true );
+
+	$cssHash = md5_file(get_stylesheet_directory() . '/css/main.css');
+	wp_enqueue_style( 'sommer-main-style', get_template_directory_uri() . '/css/main.css', array(), $cssHash );
+	$jsHash = md5_file(get_stylesheet_directory() . '/js/custom.js');
+	wp_enqueue_script( 'sommer-custom-js', get_template_directory_uri() . '/js/custom.js', array('jquery'), $jsHash, true );
+
 }
 add_action( 'wp_enqueue_scripts', 'sommer_scripts' );
 
